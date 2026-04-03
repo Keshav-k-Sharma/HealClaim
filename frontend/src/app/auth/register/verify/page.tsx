@@ -14,7 +14,10 @@ export default function VerifyPage() {
 
     useEffect(() => {
         const token = params.get('token')
-        if (!token) { setState('error'); return }
+        if (!token) {
+            setTimeout(() => setState('error'))
+            return
+        }
 
         authApi.verify(token)
             .then(() => setState('success'))
@@ -22,11 +25,13 @@ export default function VerifyPage() {
     }, [params])
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
-            <div className="flex items-center justify-center gap-2 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
-                </div>
+        <main className="min-h-screen bg-gray-50 py-12">
+            <div className="mx-auto w-full max-w-md px-4">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
+                    <div className="flex items-center justify-center gap-2 mb-8">
+                        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                            <Shield className="w-4 h-4 text-white" />
+                        </div>
                 <span className="font-semibold text-gray-900">HealClaim</span>
             </div>
 
@@ -73,6 +78,8 @@ export default function VerifyPage() {
                     </button>
                 </>
             )}
-        </div>
+                </div>
+            </div>
+        </main>
     )
 }

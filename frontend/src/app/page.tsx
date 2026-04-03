@@ -52,13 +52,13 @@ function Navbar() {
         </nav>
         <div className="flex items-center gap-3">
           <Link
-            href="/login"
+            href="/auth/login"
             className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
           >
             Sign in
           </Link>
           <Link
-            href="/register"
+            href="/auth/register"
             className="text-sm font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-brand-800 transition-colors"
           >
             Get started
@@ -92,20 +92,20 @@ function Hero() {
         {/* Role CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <RoleCTA
-            href="/register?role=PATIENT"
+            href="/auth/register/patient"
             icon={<User className="w-5 h-5" />}
             label="I'm a Patient"
             sub="Upload docs, track claims"
             primary
           />
           <RoleCTA
-            href="/register?role=HOSPITAL"
+            href="/auth/register/hospital"
             icon={<Building2 className="w-5 h-5" />}
             label="I'm a Hospital"
             sub="File and manage claims"
           />
           <RoleCTA
-            href="/register/insurer"
+            href="/auth/register/insurer"
             icon={<Briefcase className="w-5 h-5" />}
             label="I'm an Insurer"
             sub="Review and settle quickly"

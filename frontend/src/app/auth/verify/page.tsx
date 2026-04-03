@@ -15,7 +15,10 @@ function VerifyContent() {
 
     useEffect(() => {
         const token = params.get('token')
-        if (!token) { setState('error'); return }
+        if (!token) {
+            setTimeout(() => setState('error'))
+            return
+        }
 
         authApi.verify(token)
             .then(() => setState('success'))

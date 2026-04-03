@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { User, Building2, Briefcase, ChevronRight, Shield } from 'lucide-react'
 
 const roles = [
@@ -12,7 +11,7 @@ const roles = [
         description:
             'Upload your documents once, track claims in real time, and decide how to pay at discharge.',
         color: 'text-primary bg-brand-50 group-hover:bg-primary group-hover:text-white',
-        href: '/register/patient',
+        href: '/auth/register/patient',
     },
     {
         id: 'hospital',
@@ -21,7 +20,7 @@ const roles = [
         description:
             'Scan patient QR codes, upload treatment documents, and submit verified claim bundles instantly.',
         color: 'text-purple-600 bg-purple-50 group-hover:bg-purple-600 group-hover:text-white',
-        href: '/register/hospital',
+        href: '/auth/register/hospital',
     },
     {
         id: 'insurer',
@@ -30,18 +29,20 @@ const roles = [
         description:
             'Publish your policy catalog, receive pre-verified claims, and settle faster with AI assistance.',
         color: 'text-orange-600 bg-orange-50 group-hover:bg-orange-600 group-hover:text-white',
-        href: '/register/insurer',
+        href: '/auth/register/insurer',
     },
 ]
 
 export default function RegisterRolePicker() {
     return (
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            {/* Logo */}
-            <div className="flex items-center gap-2 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
-                </div>
+        <main className="min-h-screen bg-gray-50 py-12">
+            <div className="mx-auto w-full max-w-2xl px-4">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                    {/* Logo */}
+                    <div className="flex items-center gap-2 mb-8">
+                        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                            <Shield className="w-4 h-4 text-white" />
+                        </div>
                 <span className="font-semibold text-gray-900">HealClaim</span>
             </div>
 
@@ -73,10 +74,12 @@ export default function RegisterRolePicker() {
 
             <p className="text-sm text-gray-500 text-center mt-6">
                 Already have an account?{' '}
-                <Link href="/login" className="text-primary font-medium hover:underline">
+                <Link href="/auth/login" className="text-primary font-medium hover:underline">
                     Sign in
                 </Link>
             </p>
         </div>
+    </div>
+</main>
     )
 }

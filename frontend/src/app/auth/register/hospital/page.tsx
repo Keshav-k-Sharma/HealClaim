@@ -72,11 +72,13 @@ export default function HospitalRegisterPage() {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
-                </div>
+        <main className="min-h-screen bg-gray-50 py-12">
+            <div className="mx-auto w-full max-w-2xl px-4">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                    <div className="flex items-center gap-2 mb-6">
+                        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                            <Shield className="w-4 h-4 text-white" />
+                        </div>
                 <span className="font-semibold text-gray-900">HealClaim</span>
             </div>
 
@@ -116,6 +118,8 @@ export default function HospitalRegisterPage() {
                 </button>
             </form>
         </div>
+    </div>
+</main>
     )
 }
 
