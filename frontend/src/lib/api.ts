@@ -25,7 +25,7 @@ import type {
 
 // ─── Axios instance ───────────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api"
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api"
 
 const api: AxiosInstance = axios.create({
   baseURL: BASE_URL,
