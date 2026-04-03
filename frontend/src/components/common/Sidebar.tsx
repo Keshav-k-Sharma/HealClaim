@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import {
     Shield, LayoutDashboard, FileText, QrCode,
-    FolderOpen, Settings, Building2, Briefcase,
+    FolderOpen, Building2, Briefcase,
     PlusCircle, ClipboardList, BookOpen, LogOut,
     ChevronRight, Menu, X,
 } from 'lucide-react'
@@ -16,24 +16,21 @@ import type { UserRole } from '@/lib/types'
 
 const navItems: Record<UserRole, { href: string; label: string; icon: React.ReactNode }[]> = {
     PATIENT: [
-        { href: '/patient/dashboard', label: 'Home', icon: <LayoutDashboard className="w-4 h-4" /> },
+        { href: '/patient/dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
         { href: '/patient/claims', label: 'My Claims', icon: <FileText className="w-4 h-4" /> },
         { href: '/patient/qr', label: 'My QR', icon: <QrCode className="w-4 h-4" /> },
         { href: '/patient/documents', label: 'Documents', icon: <FolderOpen className="w-4 h-4" /> },
         { href: '/patient/policies', label: 'Policies', icon: <BookOpen className="w-4 h-4" /> },
-        { href: '/patient/settings', label: 'Settings', icon: <Settings className="w-4 h-4" /> },
     ],
     HOSPITAL: [
         { href: '/hospital/dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
         { href: '/hospital/claims/new', label: 'New Claim', icon: <PlusCircle className="w-4 h-4" /> },
         { href: '/hospital/claims', label: 'All Claims', icon: <ClipboardList className="w-4 h-4" /> },
-        { href: '/hospital/settings', label: 'Settings', icon: <Settings className="w-4 h-4" /> },
     ],
     INSURER: [
         { href: '/insurer/dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
         { href: '/insurer/claims', label: 'Claims Queue', icon: <ClipboardList className="w-4 h-4" /> },
         { href: '/insurer/policies', label: 'Policies', icon: <BookOpen className="w-4 h-4" /> },
-        { href: '/insurer/settings', label: 'Settings', icon: <Settings className="w-4 h-4" /> },
     ],
 }
 
@@ -90,7 +87,7 @@ export default function Sidebar({ role, userName, userEmail }: SidebarProps) {
 
     const handleLogout = () => {
         clearAuth()
-        router.push('/login')
+        router.push('/')
     }
 
     const SidebarContent = () => (

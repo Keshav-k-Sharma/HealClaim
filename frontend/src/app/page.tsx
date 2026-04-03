@@ -1,3 +1,8 @@
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuthStore } from '@/store/auth.store'
 import Link from 'next/link'
 import {
   Shield,
@@ -17,6 +22,27 @@ import {
 } from 'lucide-react'
 
 export default function LandingPage() {
+  const router = useRouter()
+  const { isAuthenticated, role, _hasHydrated } = useAuthStore()
+
+  useEffect(() => {
+    if (!_hasHydrated) return
+    if (isAuthenticated && role) {
+      const dashboardPath = `/${role.toLowerCase()}/dashboard`
+      router.replace(dashboardPath)
+    }
+  }, [isAuthenticated, role, _hasHydrated, router])
+
+  // Show loading while checking auth
+  if (_hasHydrated && isAuthenticated && role) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      </div>
+    )
+  }
+
+  // Show landing page for unauthenticated users
   return (
     <div className="min-h-screen bg-white font-sans">
       <Navbar />
