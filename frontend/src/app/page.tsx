@@ -105,7 +105,7 @@ function Hero() {
             sub="File and manage claims"
           />
           <RoleCTA
-            href="/register?role=INSURER"
+            href="/register/insurer"
             icon={<Briefcase className="w-5 h-5" />}
             label="I'm an Insurer"
             sub="Review and settle quickly"
