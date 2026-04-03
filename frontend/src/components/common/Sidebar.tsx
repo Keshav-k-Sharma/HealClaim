@@ -87,7 +87,7 @@ export default function Sidebar({ role, userName, userEmail }: SidebarProps) {
 
     const handleLogout = () => {
         clearAuth()
-        router.push('/')
+        router.push('/auth/login')
     }
 
     const SidebarContent = () => (
