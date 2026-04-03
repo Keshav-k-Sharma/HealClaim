@@ -25,7 +25,7 @@ import type {
 
 // ─── Axios instance ───────────────────────────────────────────────────────────
 
-const BASE_URL =process.env.Backend_URL ?? "http://localhost:8080"
+const BASE_URL =process.env.Backend_URL 
 
 const api: AxiosInstance = axios.create({
   baseURL: BASE_URL,
