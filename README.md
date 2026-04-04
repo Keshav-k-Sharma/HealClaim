@@ -154,15 +154,15 @@ python -m venv venv && venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 # → http://localhost:8000
-```
+
 
 **Load demo data:**
-```bash
-cd backend && ./mvnw spring-boot:run -Dspring-boot.run.profiles=seed
 
+cd backend && ./mvnw spring-boot:run -Dspring-boot.run.profiles=seed
+```
 
 ## 📁 Project Structure
-
+```
 
 HealClaim-Project/
 ├── healclaim-frontend/
