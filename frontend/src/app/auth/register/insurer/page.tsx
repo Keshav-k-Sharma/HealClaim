@@ -59,7 +59,7 @@ export default function InsurerRegisterPage() {
                     Verify your email, then sign in to publish your first policy.
                 </p>
                 <button
-                    onClick={() => router.push('/login')}
+                    onClick={() => router.push('/auth/login')}
                     className="w-full h-12 bg-primary text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors"
                 >
                     Go to sign in

@@ -52,7 +52,7 @@ function VerifyContent() {
                         Your account is now active. You can sign in.
                     </p>
                     <button
-                        onClick={() => router.push('/login')}
+                        onClick={() => router.push('/auth/login')}
                         className="w-full h-12 bg-primary text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors"
                     >
                         Go to sign in
@@ -70,7 +70,7 @@ function VerifyContent() {
                         This link may have expired or already been used.
                     </p>
                     <button
-                        onClick={() => router.push('/login')}
+                        onClick={() => router.push('/auth/login')}
                         className="w-full h-12 bg-primary text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors"
                     >
                         Back to sign in

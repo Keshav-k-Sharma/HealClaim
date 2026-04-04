@@ -11,8 +11,8 @@ export default function PatientLayout({ children }: { children: React.ReactNode 
 
     useEffect(() => {
         if (!_hasHydrated) return
-        if (!isAuthenticated) { router.replace('/login'); return }
-        if (role !== 'PATIENT') router.replace('/login')
+        if (!isAuthenticated) { router.replace('/auth/login'); return }
+        if (role !== 'PATIENT') router.replace('/auth/login')
     }, [isAuthenticated, role, _hasHydrated, router])
 
     // Wait for hydration before rendering anything

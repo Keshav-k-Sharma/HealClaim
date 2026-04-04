@@ -11,8 +11,8 @@ export default function HospitalLayout({ children }: { children: React.ReactNode
 
     useEffect(() => {
         if (!_hasHydrated) return
-        if (!isAuthenticated) { router.replace('/login'); return }
-        if (role !== 'HOSPITAL') router.replace('/login')
+        if (!isAuthenticated) { router.replace('/auth/login'); return }
+        if (role !== 'HOSPITAL') router.replace('/auth/login')
     }, [isAuthenticated, role, _hasHydrated, router])
 
     if (!_hasHydrated) return null

@@ -62,7 +62,7 @@ export default function HospitalRegisterPage() {
                     Check your email to verify your account. Once verified, you can start filing claims.
                 </p>
                 <button
-                    onClick={() => router.push('/login')}
+                    onClick={() => router.push('/auth/login')}
                     className="w-full h-12 bg-primary text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors"
                 >
                     Go to sign in
